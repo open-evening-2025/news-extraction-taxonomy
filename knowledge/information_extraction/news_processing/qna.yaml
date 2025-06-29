@@ -242,7 +242,7 @@ document_outline: |
   techniques, JSON schema design, agentic workflows, and quality assurance for
         organisations and automated processing systems.
 document:
-  repo: https://github.com/nicholaslamb/taxonomy-news-extraction
-  commit: original_contribution
+  repo: https://github.com/open-evening-2025/resources
+  commit: 2fa8a4e2713c67735fe2cd8c7c2e4f004f506455
   patterns:
-    - news_extraction_guide.md
+    - news_extraction/news_extraction_guide.md
