@@ -1,0 +1,4 @@
+Title of work: News Information Extraction and Structured Analysis
+Link to work: Original work created for InstructLab taxonomy
+License of the work: Apache-2.0
+Creator names: nicholaslamb 

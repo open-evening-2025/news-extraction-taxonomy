@@ -1,0 +1,206 @@
+version: 3
+created_by: nicholaslamb
+task_description: To teach a language model how to extract structured information from news articles and snippets, formatting the output as JSON with predefined metadata fields suitable for automated analysis and agentic workflows.
+
+seed_examples:
+- question: |
+    Extract structured information from this news snippet:
+    "WASHINGTON - The Federal Reserve announced today a 0.25% interest rate cut, citing concerns over slowing economic growth. Fed Chair Jerome Powell stated that the decision was unanimous among board members. The cut takes effect immediately and is expected to stimulate consumer spending ahead of the holiday season."
+  answer: |
+    ```json
+    {
+      "headline": "Federal Reserve Announces 0.25% Interest Rate Cut",
+      "location": "Washington",
+      "date_extracted": "2024-01-15",
+      "source_type": "news_snippet",
+      "key_entities": {
+        "people": ["Jerome Powell"],
+        "organisations": ["Federal Reserve"],
+        "locations": ["Washington"]
+      },
+      "main_topics": ["monetary_policy", "interest_rates", "economic_policy"],
+      "sentiment": "neutral",
+      "urgency_level": "medium",
+      "key_facts": [
+        "Interest rate cut of 0.25%",
+        "Decision was unanimous among board members",
+        "Cut takes effect immediately",
+        "Expected to stimulate consumer spending"
+      ],
+      "implications": [
+        "Potential increase in consumer spending",
+        "Response to slowing economic growth concerns"
+      ],
+             "actions": {
+         "triage_to": "deep_research_agent",
+         "research_domain": "economic_policy",
+         "priority": "medium",
+         "alert_stakeholders": ["treasury_department", "financial_markets_team"],
+         "follow_up_required": true,
+         "timeline": "immediate_effect"
+       }
+    }
+    ```
+
+- question: |
+    Extract structured information from this news article:
+    "KYIV, Ukraine - Ukrainian forces reported repelling a major offensive in the eastern Donetsk region yesterday. Military spokesman Andriy Kovalenko confirmed that three enemy positions were neutralized. The attack began at dawn and lasted approximately 6 hours. International observers are monitoring the situation closely."
+  answer: |
+    ```json
+    {
+      "headline": "Ukrainian Forces Repel Major Offensive in Donetsk Region",
+      "location": "Kyiv, Ukraine / Donetsk region",
+      "date_extracted": "2024-01-15",
+      "source_type": "news_article",
+      "key_entities": {
+        "people": ["Andriy Kovalenko"],
+        "organisations": ["Ukrainian forces", "International observers"],
+        "locations": ["Kyiv", "Ukraine", "Donetsk region"]
+      },
+      "main_topics": ["military_conflict", "territorial_defense", "international_monitoring"],
+      "sentiment": "tense",
+      "urgency_level": "high",
+      "key_facts": [
+        "Major offensive repelled in Donetsk region",
+        "Three enemy positions neutralised",
+        "Attack lasted approximately 6 hours",
+        "Attack began at dawn"
+      ],
+      "implications": [
+        "Continued military activity in eastern Ukraine",
+        "International attention on conflict zone"
+      ],
+             "actions": {
+         "triage_to": "monitoring_agent",
+         "monitoring_type": "security_threat",
+         "priority": "high",
+         "alert_stakeholders": ["defence_operations_centre", "nato_intelligence"],
+         "follow_up_required": true,
+         "geographic_focus": "donetsk_region",
+         "timeline": "yesterday_dawn_6hours"
+       }
+    }
+    ```
+
+- question: |
+    Extract structured information from this economic news:
+    "LONDON - Oil prices surged 4.2% to $87.50 per barrel following reports of supply disruptions in the Middle East. Brent crude futures climbed to their highest level in three months. Energy analysts predict continued volatility as geopolitical tensions escalate. Major oil companies' stocks rose in early trading."
+  answer: |
+    ```json
+    {
+      "headline": "Oil Prices Surge 4.2% on Middle East Supply Disruption Reports",
+      "location": "London",
+      "date_extracted": "2024-01-15",
+      "source_type": "economic_news",
+      "key_entities": {
+        "people": ["Energy analysts"],
+        "organisations": ["Major oil companies"],
+        "locations": ["London", "Middle East"]
+      },
+      "main_topics": ["energy_markets", "oil_prices", "geopolitical_tensions", "supply_disruption"],
+      "sentiment": "concerned",
+      "urgency_level": "medium",
+      "key_facts": [
+        "Oil prices increased 4.2% to $87.50 per barrel",
+        "Brent crude at highest level in three months",
+        "Supply disruptions reported in Middle East",
+        "Oil company stocks rose in early trading"
+      ],
+      "implications": [
+        "Potential energy price increases for consumers",
+        "Market volatility expected to continue",
+        "Geopolitical tensions affecting global markets"
+      ],
+             "actions": {
+         "triage_to": "monitoring_agent",
+         "monitoring_type": "market_surveillance",
+         "priority": "medium",
+         "alert_stakeholders": ["energy_department", "economic_policy_team"],
+         "follow_up_required": true,
+         "risk_factors": ["supply_disruption", "geopolitical_tension"],
+         "geographic_focus": "middle_east"
+       }
+    }
+    ```
+
+- question: |
+    Extract structured information from this technology news:
+    "SAN FRANCISCO - Tech giant announces breakthrough in quantum computing, claiming their new processor can solve certain problems 1000x faster than traditional computers. The announcement sent the company's stock up 12% in after-hours trading. Industry experts call it a 'game-changer' for cryptography and drug discovery applications."
+  answer: |
+    ```json
+    {
+      "headline": "Tech Giant Announces Quantum Computing Breakthrough",
+      "location": "San Francisco",
+      "date_extracted": "2024-01-15",
+      "source_type": "technology_news",
+      "key_entities": {
+        "people": ["Industry experts"],
+        "organisations": ["Tech giant"],
+        "locations": ["San Francisco"]
+      },
+      "main_topics": ["quantum_computing", "technology_breakthrough", "stock_market", "cryptography"],
+      "sentiment": "positive",
+      "urgency_level": "medium",
+      "key_facts": [
+        "New quantum processor 1000x faster than traditional computers",
+        "Company stock increased 12% in after-hours trading",
+        "Applications in cryptography and drug discovery",
+        "Industry experts call it a 'game-changer'"
+      ],
+      "implications": [
+        "Potential disruption to current computing paradigms",
+        "Impact on cybersecurity and encryption",
+        "Acceleration of scientific research capabilities"
+      ],
+             "actions": {
+         "triage_to": "deep_research_agent",
+         "research_domain": "technology_impact",
+         "priority": "medium",
+         "alert_stakeholders": ["cybersecurity_team", "research_development"],
+         "follow_up_required": true,
+         "research_focus": ["cryptography_impact", "pharmaceutical_research"],
+         "competitive_analysis_needed": true
+       }
+    }
+    ```
+
+- question: |
+    Extract structured information from this political news:
+    "BRUSSELS - European Union leaders reached a preliminary agreement on new sanctions targeting the energy sector. The proposal requires approval from all 27 member states and could be implemented within two weeks. French President Emmanuel Macron called the agreement 'a strong unified response' during a press conference."
+  answer: |
+    ```json
+    {
+      "headline": "EU Leaders Reach Preliminary Agreement on Energy Sector Sanctions",
+      "location": "Brussels",
+      "date_extracted": "2024-01-15",
+      "source_type": "political_news",
+      "key_entities": {
+        "people": ["Emmanuel Macron"],
+        "organisations": ["European Union", "27 member states"],
+        "locations": ["Brussels", "France"]
+      },
+      "main_topics": ["international_sanctions", "energy_policy", "diplomatic_relations", "eu_politics"],
+      "sentiment": "determined",
+      "urgency_level": "high",
+      "key_facts": [
+        "Preliminary agreement on energy sector sanctions",
+        "Requires approval from all 27 EU member states",
+        "Implementation possible within two weeks",
+        "Described as 'strong unified response' by Macron"
+      ],
+      "implications": [
+        "Potential impact on global energy markets",
+        "Demonstration of EU unity on foreign policy",
+        "Economic consequences for targeted entities"
+      ],
+             "actions": {
+         "triage_to": "monitoring_agent",
+         "monitoring_type": "policy_development",
+         "priority": "high",
+         "alert_stakeholders": ["state_department", "economic_sanctions_team"],
+         "follow_up_required": true,
+         "timeline": "two_weeks_implementation",
+         "tracking_focus": "eu_sanctions_development"
+       }
+    }
+    ```

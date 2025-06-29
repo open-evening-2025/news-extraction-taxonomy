@@ -1,0 +1,4 @@
+Title of work: News Processing and Information Extraction Systems Guide
+Link to work: Original work created for InstructLab taxonomy
+License of the work: Apache-2.0
+Creator names: nicholaslamb 

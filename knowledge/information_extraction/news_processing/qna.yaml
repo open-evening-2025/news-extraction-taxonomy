@@ -1,0 +1,248 @@
+created_by: nicholaslamb
+version: 3
+domain: information_extraction
+seed_examples:
+  - context: |
+      **News Information Extraction** is a critical process in modern automated
+      information processing systems and organisational analysis. It involves the systematic
+      extraction of structured data from unstructured news content, transforming
+      raw text into actionable intelligence. The process typically includes several
+      key components:       **entity recognition** (identifying people, organisations,
+      locations, and dates), **topic classification** (categorising content by
+      subject matter), **sentiment analysis** (determining the emotional tone),
+      and **relationship extraction** (understanding connections between entities).
+
+      Modern news extraction systems use **Natural Language Processing (NLP)**
+      techniques combined with **machine learning models** to automatically process
+      large volumes of news content. The output is typically structured as **JSON**
+      or **XML** formats that can be easily consumed by downstream systems, databases,
+      and analytical tools. Key metadata fields often include: headline, location,
+      source type, key entities, main topics, sentiment, urgency level, key facts,
+      implications, and actionable intelligence.
+
+      For organisations, the extracted information enables **real-time
+      monitoring** of global events, **risk assessment**, **trend analysis**,
+      and **decision support**. The structured format allows for automated
+      **alert systems**, **data fusion** with other information sources, and
+      **predictive analytics**. Quality metrics for extraction systems include
+      **precision** (accuracy of extracted information), **recall** (completeness
+      of extraction), and **processing speed** (throughput capability).
+    questions_and_answers:
+      - question: |
+          What are the key components of news information extraction?
+        answer: |
+          The key components include entity recognition (identifying people,
+          organisations, locations, and dates), topic classification (categorising
+          content by subject matter), sentiment analysis (determining emotional
+          tone), and relationship extraction (understanding connections between
+          entities).
+      - question: |
+          What technologies are used in modern news extraction systems?
+        answer: |
+          Modern news extraction systems use Natural Language Processing (NLP)
+          techniques combined with machine learning models to automatically
+          process large volumes of news content.
+      - question: |
+          How do organisations benefit from structured news extraction?
+        answer: |
+          Organisations benefit through real-time monitoring of global
+          events, risk assessment, trend analysis, and decision support. The
+          structured format enables automated alert systems, data fusion with
+          other information sources, and predictive analytics.
+
+  - context: |
+      **JSON Schema Design** for news extraction requires careful consideration
+      of the target use case and downstream processing requirements. A well-designed
+      schema includes **mandatory fields** (headline, location, date_extracted,
+      source_type) and **optional enrichment fields** (sentiment, urgency_level,
+      implications). The **key_entities** object should be structured with
+      sub-categories for people, organisations, and locations to enable efficient
+      querying and analysis.
+
+      **Urgency levels** are typically classified as: **low** (routine news,
+      background information), **medium** (significant developments requiring
+      attention), **high** (breaking news, crisis situations), and **critical**
+      (immediate threats or emergency situations). **Sentiment analysis** helps
+      prioritize content and understand public perception, with common categories
+      being positive, negative, neutral, concerned, tense, and determined.
+
+      The **actions** section is crucial for operational systems, containing
+      structured data that enables automated triaging to appropriate generic
+      agents with domain-specific configurations. This includes specifying which
+      agent type should handle the information (triage_to), the specific domain
+      or analysis type, priority levels, stakeholder notifications, and follow-up
+      requirements. **Generic agent triaging** ensures that extracted information
+      reaches the most suitable agent type with appropriate configuration parameters. **Data validation** and
+      **quality assurance** processes ensure consistency and reliability of the
+      extracted information, including field validation, entity disambiguation,
+      and cross-reference checking.
+    questions_and_answers:
+      - question: |
+          What are the mandatory fields in a news extraction JSON schema?
+        answer: |
+          The mandatory fields typically include headline, location, date_extracted,
+          and source_type, which provide the essential context for any news item.
+      - question: |
+          How are urgency levels classified in news extraction systems?
+        answer: |
+          Urgency levels are typically classified as: low (routine news, background
+          information), medium (significant developments requiring attention),
+          high (breaking news, crisis situations), and critical (immediate threats
+          or emergency situations).
+      - question: |
+          What is the purpose of the actions section?
+        answer: |
+          The actions section contains structured data that enables automated
+          triaging to appropriate generic agents with domain-specific configurations,
+          specifying which agent type should handle the information, the analysis
+          domain, priority levels, stakeholder notifications, and follow-up
+          requirements.
+
+  - context: |
+      **Agentic Workflows** in news processing involve autonomous systems that
+      can make decisions and take actions based on extracted information. These
+      workflows typically include **ingestion agents** (collecting news from
+      multiple sources), **extraction agents** (extracting and structuring
+      information), **triage agents** (routing information to appropriate agents),
+      and **two core processing agents**: **deep_research_agent** (conducting
+      comprehensive analysis on complex topics requiring detailed investigation)
+      and **monitoring_agent** (tracking ongoing situations, policy developments,
+      and market surveillance) that can be configured for various domains and
+      use cases.
+
+      **Multi-agent systems** work collaboratively through intelligent triaging,
+      with two core generic agents that can be configured for different domains.
+      **Deep_research_agent** is configurable for comprehensive analysis including
+      economic_policy, technology_impact, social_analysis, and complex investigations.
+      **Monitoring_agent** is configurable for ongoing surveillance including
+      security_threat, policy_development, market_surveillance, and situation
+      tracking. **Configuration parameters** specify the research domain or
+      monitoring type, making these two agents sufficient for most use cases.
+
+      **Integration with external systems** is crucial for operational effectiveness.
+      This includes connections to **security monitoring platforms**, **economic
+      analysis systems**, **social media monitoring tools**, and **alert
+      notification systems**. The structured JSON output enables seamless
+      **API integration** and **real-time data streaming** to downstream
+      consumers. **Scalability considerations** include horizontal scaling
+      of processing agents, load balancing, and efficient data storage and
+      retrieval mechanisms.
+    questions_and_answers:
+      - question: |
+          What are the main components of agentic workflows in news processing?
+        answer: |
+          Agentic workflows include ingestion agents (collecting news from
+          multiple sources), extraction agents (extracting and structuring
+          information), triage agents (routing to appropriate agents), and
+          two core processing agents (deep_research_agent for comprehensive
+          analysis, monitoring_agent for ongoing surveillance) that can be
+          configured for various domains and analysis types.
+      - question: |
+          How do multi-agent systems collaborate in news processing?
+        answer: |
+          Multi-agent systems collaborate through intelligent triaging, with
+          two core generic agents: deep_research_agent (for comprehensive
+          analysis) and monitoring_agent (for ongoing surveillance) that can
+          be configured for different domains. Triage protocols ensure
+          information reaches the most suitable agent type with appropriate
+          configuration parameters based on content analysis and routing rules.
+      - question: |
+          What external systems typically integrate with news processing workflows?
+        answer: |
+          External systems include security monitoring platforms, economic
+          analysis systems, social media monitoring tools, and alert notification
+          systems, enabled through API integration and real-time data streaming.
+
+  - context: |
+      **Quality Assurance** in automated news extraction systems requires
+      comprehensive **validation frameworks** to ensure accuracy and reliability.
+      **Entity validation** involves cross-referencing extracted names, organisations,
+      and locations against authoritative databases and knowledge graphs.
+      **Fact checking** mechanisms compare extracted claims against verified
+      sources and historical data to identify potential misinformation or errors.
+
+      **Confidence scoring** provides metadata about the reliability of extracted
+      information, typically ranging from 0.0 to 1.0, where higher scores indicate
+      greater confidence in the accuracy of the extraction. **Human-in-the-loop**
+      systems allow for manual review and correction of low-confidence extractions,
+      creating feedback loops that improve system performance over time.
+
+      **Performance monitoring** includes tracking key metrics such as **processing
+      latency** (time from ingestion to structured output), **throughput** (volume
+      of articles processed per unit time), **error rates** (percentage of failed
+      extractions), and **accuracy metrics** (precision and recall compared to
+      ground truth data). **Continuous learning** mechanisms incorporate feedback
+      to refine extraction models and improve future performance.
+    questions_and_answers:
+      - question: |
+          What validation techniques are used in news extraction quality assurance?
+        answer: |
+          Quality assurance uses entity validation (cross-referencing against
+          authoritative databases), fact-checking mechanisms (comparing claims
+          against verified sources), and confidence scoring to assess extraction
+          reliability.
+      - question: |
+          How do human-in-the-loop systems improve news extraction accuracy?
+        answer: |
+          Human-in-the-loop systems allow manual review and correction of
+          low-confidence extractions, creating feedback loops that improve
+          system performance over time through continuous learning mechanisms.
+      - question: |
+          What performance metrics are important for news extraction systems?
+        answer: |
+          Key metrics include processing latency (time from ingestion to output),
+          throughput (volume processed per unit time), error rates (percentage
+          of failed extractions), and accuracy metrics (precision and recall
+          compared to ground truth data).
+
+  - context: |
+      **Real-time Processing** and **Scalability** are critical requirements
+      for news extraction systems serving organisations and large-scale
+      operations. **Stream processing architectures** enable continuous ingestion
+      and analysis of news feeds from multiple sources simultaneously. **Load
+      balancing** distributes processing workload across multiple extraction
+      agents to handle high-volume news streams without bottlenecks.
+
+      **Distributed computing frameworks** allow horizontal scaling by adding
+      more processing nodes as news volume increases. **Caching mechanisms**
+      store frequently accessed data and pre-computed results to reduce processing
+      time for similar content. **Priority queues** ensure that high-urgency
+      news items are processed before lower-priority content during peak loads.
+
+      **Fault tolerance** mechanisms include **redundant processing paths**,
+      **automatic failover** to backup systems, and **data persistence** to
+      prevent loss of extracted information during system failures. **Rate
+      limiting** and **throttling** protect downstream systems from being
+      overwhelmed by high-frequency updates. **Monitoring dashboards** provide
+      real-time visibility into system performance, processing queues, and
+      error rates to enable proactive system management.
+    questions_and_answers:
+      - question: |
+          What technologies enable real-time news processing at scale?
+        answer: |
+          Real-time processing uses stream processing architectures, load
+          balancing across multiple agents, distributed computing frameworks
+          for horizontal scaling, and caching mechanisms to handle high-volume
+          news streams efficiently.
+      - question: |
+          How do news extraction systems handle system failures?
+        answer: |
+          Fault tolerance is achieved through redundant processing paths,
+          automatic failover to backup systems, and data persistence to
+          prevent loss of extracted information during system failures.
+      - question: |
+          What monitoring capabilities are needed for large-scale news processing?
+        answer: |
+          Monitoring includes real-time dashboards showing system performance,
+          processing queues, error rates, and throughput metrics to enable
+          proactive system management and optimisation.
+
+document_outline: |
+  Comprehensive guide to news information extraction systems, covering extraction
+  techniques, JSON schema design, agentic workflows, and quality assurance for
+        organisations and automated processing systems.
+document:
+  repo: https://github.com/nicholaslamb/taxonomy-news-extraction
+  commit: original_contribution
+  patterns:
+    - news_extraction_guide.md
