@@ -5,7 +5,7 @@ task_description: To teach a language model how to extract structured informatio
 seed_examples:
 - question: |
     Extract structured information from this news snippet:
-    "WASHINGTON - The Federal Reserve announced today a 0.25% interest rate cut, citing concerns over slowing economic growth. Fed Chair Jerome Powell stated that the decision was unanimous among board members. The cut takes effect immediately and is expected to stimulate consumer spending ahead of the holiday season."
+    "ARTICLE: WASHINGTON - The Federal Reserve announced today a 0.25% interest rate cut, citing concerns over slowing economic growth. Fed Chair Jerome Powell stated that the decision was unanimous among board members. The cut takes effect immediately and is expected to stimulate consumer spending ahead of the holiday season."
   answer: |
     ```json
     {
@@ -44,7 +44,7 @@ seed_examples:
 
 - question: |
     Extract structured information from this news article:
-    "KYIV, Ukraine - Ukrainian forces reported repelling a major offensive in the eastern Donetsk region yesterday. Military spokesman Andriy Kovalenko confirmed that three enemy positions were neutralized. The attack began at dawn and lasted approximately 6 hours. International observers are monitoring the situation closely."
+    "ARTICLE: KYIV, Ukraine - Ukrainian forces reported repelling a major offensive in the eastern Donetsk region yesterday. Military spokesman Andriy Kovalenko confirmed that three enemy positions were neutralized. The attack began at dawn and lasted approximately 6 hours. International observers are monitoring the situation closely."
   answer: |
     ```json
     {
@@ -84,7 +84,7 @@ seed_examples:
 
 - question: |
     Extract structured information from this economic news:
-    "LONDON - Oil prices surged 4.2% to $87.50 per barrel following reports of supply disruptions in the Middle East. Brent crude futures climbed to their highest level in three months. Energy analysts predict continued volatility as geopolitical tensions escalate. Major oil companies' stocks rose in early trading."
+    "ARTICLE: LONDON - Oil prices surged 4.2% to $87.50 per barrel following reports of supply disruptions in the Middle East. Brent crude futures climbed to their highest level in three months. Energy analysts predict continued volatility as geopolitical tensions escalate. Major oil companies' stocks rose in early trading."
   answer: |
     ```json
     {
@@ -125,7 +125,7 @@ seed_examples:
 
 - question: |
     Extract structured information from this technology news:
-    "SAN FRANCISCO - Tech giant announces breakthrough in quantum computing, claiming their new processor can solve certain problems 1000x faster than traditional computers. The announcement sent the company's stock up 12% in after-hours trading. Industry experts call it a 'game-changer' for cryptography and drug discovery applications."
+    "ARTICLE: SAN FRANCISCO - Tech giant announces breakthrough in quantum computing, claiming their new processor can solve certain problems 1000x faster than traditional computers. The announcement sent the company's stock up 12% in after-hours trading. Industry experts call it a 'game-changer' for cryptography and drug discovery applications."
   answer: |
     ```json
     {
@@ -166,7 +166,7 @@ seed_examples:
 
 - question: |
     Extract structured information from this political news:
-    "BRUSSELS - European Union leaders reached a preliminary agreement on new sanctions targeting the energy sector. The proposal requires approval from all 27 member states and could be implemented within two weeks. French President Emmanuel Macron called the agreement 'a strong unified response' during a press conference."
+    "ARTICLE: BRUSSELS - European Union leaders reached a preliminary agreement on new sanctions targeting the energy sector. The proposal requires approval from all 27 member states and could be implemented within two weeks. French President Emmanuel Macron called the agreement 'a strong unified response' during a press conference."
   answer: |
     ```json
     {

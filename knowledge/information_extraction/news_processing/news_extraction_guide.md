@@ -4,6 +4,8 @@
 
 This guide covers the specific **News Information Extraction** system implemented in the InstructLab taxonomy. The system teaches language models to extract structured JSON data from news articles and snippets, designed for automated analysis and agentic workflows. The implementation utilises a **two-agent architecture** with standardised JSON output formats.
 
+**Input Format**: All news articles are prefixed with "ARTICLE: " to ensure consistent preprocessing and model recognition of news content.
+
 ## Specific Extraction Components
 
 ### 1. Entity Recognition Examples
@@ -56,27 +58,27 @@ Our system generates forward-looking implications:
 Our compositional skill trains models utilising these specific examples:
 
 ### Example 1: Economic News → Deep Research Agent
-**Input**: "WASHINGTON - The Federal Reserve announced today a 0.25% interest rate cut..."
+**Input**: "ARTICLE: WASHINGTON - The Federal Reserve announced today a 0.25% interest rate cut..."
 **Output**: Triaged to `deep_research_agent` with `economic_policy` domain
 **Stakeholders**: treasury_department, financial_markets_team
 
 ### Example 2: Military News → Monitoring Agent  
-**Input**: "KYIV, Ukraine - Ukrainian forces reported repelling a major offensive..."
+**Input**: "ARTICLE: KYIV, Ukraine - Ukrainian forces reported repelling a major offensive..."
 **Output**: Triaged to `monitoring_agent` with `security_threat` type
 **Stakeholders**: defense_operations_center, nato_intelligence
 
 ### Example 3: Energy News → Monitoring Agent
-**Input**: "LONDON - Oil prices surged 4.2% to $87.50 per barrel..."
+**Input**: "ARTICLE: LONDON - Oil prices surged 4.2% to $87.50 per barrel..."
 **Output**: Triaged to `monitoring_agent` with `market_surveillance` type
 **Stakeholders**: energy_department, economic_policy_team
 
 ### Example 4: Technology News → Deep Research Agent
-**Input**: "SAN FRANCISCO - Tech giant announces breakthrough in quantum computing..."
+**Input**: "ARTICLE: SAN FRANCISCO - Tech giant announces breakthrough in quantum computing..."
 **Output**: Triaged to `deep_research_agent` with `technology_impact` domain
 **Stakeholders**: cybersecurity_team, research_development
 
 ### Example 5: Political News → Monitoring Agent
-**Input**: "BRUSSELS - European Union leaders reached a preliminary agreement..."
+**Input**: "ARTICLE: BRUSSELS - European Union leaders reached a preliminary agreement..."
 **Output**: Triaged to `monitoring_agent` with `policy_development` type
 **Stakeholders**: state_department, economic_sanctions_team
 
