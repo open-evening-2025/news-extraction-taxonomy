@@ -4,8 +4,9 @@ task_description: To teach a language model how to extract structured informatio
 
 seed_examples:
 - question: |
-    Extract structured information from this news snippet:
-    "ARTICLE: WASHINGTON - The Federal Reserve announced today a 0.25% interest rate cut, citing concerns over slowing economic growth. Fed Chair Jerome Powell stated that the decision was unanimous among board members. The cut takes effect immediately and is expected to stimulate consumer spending ahead of the holiday season."
+    ARTICLE: WASHINGTON - The Federal Reserve announced today a 0.25% interest rate cut, citing concerns over slowing economic growth. Fed Chair Jerome Powell stated that the decision was unanimous among board members. The cut takes effect immediately and is expected to stimulate consumer spending ahead of the holiday season.
+
+    Extract the key information as structured JSON:
   answer: |
     ```json
     {
@@ -31,7 +32,7 @@ seed_examples:
         "Potential increase in consumer spending",
         "Response to slowing economic growth concerns"
       ],
-             "actions": {
+      "actions": {
          "triage_to": "deep_research_agent",
          "research_domain": "economic_policy",
          "priority": "medium",
@@ -43,8 +44,9 @@ seed_examples:
     ```
 
 - question: |
-    Extract structured information from this news article:
-    "ARTICLE: KYIV, Ukraine - Ukrainian forces reported repelling a major offensive in the eastern Donetsk region yesterday. Military spokesman Andriy Kovalenko confirmed that three enemy positions were neutralized. The attack began at dawn and lasted approximately 6 hours. International observers are monitoring the situation closely."
+    ARTICLE: KYIV, Ukraine - Ukrainian forces reported repelling a major offensive in the eastern Donetsk region yesterday. Military spokesman Andriy Kovalenko confirmed that three enemy positions were neutralized. The attack began at dawn and lasted approximately 6 hours. International observers are monitoring the situation closely.
+
+    Extract the key information as structured JSON:
   answer: |
     ```json
     {
@@ -70,7 +72,7 @@ seed_examples:
         "Continued military activity in eastern Ukraine",
         "International attention on conflict zone"
       ],
-             "actions": {
+      "actions": {
          "triage_to": "monitoring_agent",
          "monitoring_type": "security_threat",
          "priority": "high",
@@ -83,8 +85,9 @@ seed_examples:
     ```
 
 - question: |
-    Extract structured information from this economic news:
-    "ARTICLE: LONDON - Oil prices surged 4.2% to $87.50 per barrel following reports of supply disruptions in the Middle East. Brent crude futures climbed to their highest level in three months. Energy analysts predict continued volatility as geopolitical tensions escalate. Major oil companies' stocks rose in early trading."
+    ARTICLE: LONDON - Oil prices surged 4.2% to $87.50 per barrel following reports of supply disruptions in the Middle East. Brent crude futures climbed to their highest level in three months. Energy analysts predict continued volatility as geopolitical tensions escalate. Major oil companies' stocks rose in early trading.
+
+    Extract the key information as structured JSON:
   answer: |
     ```json
     {
@@ -111,7 +114,7 @@ seed_examples:
         "Market volatility expected to continue",
         "Geopolitical tensions affecting global markets"
       ],
-             "actions": {
+      "actions": {
          "triage_to": "monitoring_agent",
          "monitoring_type": "market_surveillance",
          "priority": "medium",
@@ -124,8 +127,9 @@ seed_examples:
     ```
 
 - question: |
-    Extract structured information from this technology news:
-    "ARTICLE: SAN FRANCISCO - Tech giant announces breakthrough in quantum computing, claiming their new processor can solve certain problems 1000x faster than traditional computers. The announcement sent the company's stock up 12% in after-hours trading. Industry experts call it a 'game-changer' for cryptography and drug discovery applications."
+    ARTICLE: SAN FRANCISCO - Tech giant announces breakthrough in quantum computing, claiming their new processor can solve certain problems 1000x faster than traditional computers. The announcement sent the company's stock up 12% in after-hours trading. Industry experts call it a 'game-changer' for cryptography and drug discovery applications.
+
+    Extract the key information as structured JSON:
   answer: |
     ```json
     {
@@ -152,7 +156,7 @@ seed_examples:
         "Impact on cybersecurity and encryption",
         "Acceleration of scientific research capabilities"
       ],
-             "actions": {
+      "actions": {
          "triage_to": "deep_research_agent",
          "research_domain": "technology_impact",
          "priority": "medium",
@@ -165,8 +169,9 @@ seed_examples:
     ```
 
 - question: |
-    Extract structured information from this political news:
-    "ARTICLE: BRUSSELS - European Union leaders reached a preliminary agreement on new sanctions targeting the energy sector. The proposal requires approval from all 27 member states and could be implemented within two weeks. French President Emmanuel Macron called the agreement 'a strong unified response' during a press conference."
+    ARTICLE: BRUSSELS - European Union leaders reached a preliminary agreement on new sanctions targeting the energy sector. The proposal requires approval from all 27 member states and could be implemented within two weeks. French President Emmanuel Macron called the agreement 'a strong unified response' during a press conference.
+
+    Extract the key information as structured JSON:
   answer: |
     ```json
     {
@@ -193,7 +198,7 @@ seed_examples:
         "Demonstration of EU unity on foreign policy",
         "Economic consequences for targeted entities"
       ],
-             "actions": {
+      "actions": {
          "triage_to": "monitoring_agent",
          "monitoring_type": "policy_development",
          "priority": "high",
